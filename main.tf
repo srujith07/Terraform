@@ -79,6 +79,7 @@ resource "aws_instance" "node1" {
   subnet_id                   = local.subnet_id
   vpc_security_group_ids      = [aws_security_group.ssh.id]
   associate_public_ip_address = true
+  key_name                    = var.key_name
 
   root_block_device {
     volume_size = 20
@@ -97,6 +98,7 @@ resource "aws_instance" "node2" {
   subnet_id                   = local.subnet_id
   vpc_security_group_ids      = [aws_security_group.ssh.id]
   associate_public_ip_address = true
+  key_name                    = var.key_name
 
   root_block_device {
     volume_size = 20
